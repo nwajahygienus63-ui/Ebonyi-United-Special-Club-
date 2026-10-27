@@ -1,234 +1,217 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <meta name="theme-color" content="#075c35">  
+  <title>Ebonyi United Special Club</title>  
+  <style>  
+    * { box-sizing: border-box; }  
+    body {  
+      margin: 0;  
+      font-family: Arial, sans-serif;  
+      background: #f2f5f3;  
+      color: #222;  
+    }  
+    header {  
+      background: #075c35;  
+      color: white;  
+      padding: 25px 16px;  
+      text-align: center;  
+    }  
+    header h1 { margin: 0 0 10px; font-size: 24px; }  
+    header p { margin: 8px 0; }  
+    main { max-width: 650px; margin: auto; padding: 18px; }  
+    .card {  
+      background: white;  
+      padding: 20px;  
+      margin-bottom: 16px;  
+      border-radius: 12px;  
+      box-shadow: 0 2px 8px #00000012;  
+    }  
+    h2 { color: #075c35; margin-top: 0; }  
+    label { display: block; margin-top: 14px; font-weight: bold; }  
+    input {  
+      display: block;  
+      width: 100%;  
+      padding: 12px;  
+      margin-top: 6px;  
+      border: 1px solid #bbb;  
+      border-radius: 7px;  
+      font-size: 16px;  
+    }  
+    button {  
+      width: 100%;  
+      padding: 13px;  
+      margin-top: 14px;  
+      border: 0;  
+      border-radius: 7px;  
+      background: #075c35;  
+      color: white;  
+      font-size: 16px;  
+      font-weight: bold;  
+    }  
+    button.secondary { background: #e6eee9; color: #075c35; }  
+    button:disabled { opacity: .6; }  
+    #message { white-space: pre-wrap; overflow-wrap: anywhere; }  
+    footer { text-align: center; padding: 20px; color: #666; }  
+  </style>  
+</head>  
+<body>  
+<header>  
+  <h1>Ebonyi United Special Club</h1>  
+  <p>Enugu State Branch</p>  
+  <p><strong>Raise Yourself to Help Mankind</strong></p>  
+</header>  <main>  
+  <section class="card">  
+    <h2>Welcome</h2>  
+    <p>Founder: Nwaja Hygienus, popularly known as MC Okwute Ndi Igbo.</p>  
+    <p>Register for membership or sign in to your account.</p>  
+  </section>    <section class="card">  
+    <h2>Member Registration</h2>  
+    <form id="registerForm">  
+      <label for="fullName">Full name</label>  
+      <input id="fullName" autocomplete="name" required maxlength="100">  <label for="registerEmail">Email address</label>  
+  <input id="registerEmail" type="email" autocomplete="email" required>  
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#075c35">
-  <title>Ebonyi United Special Club</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f2f5f3;
-      color: #222;
-    }
-    header {
-      background: #075c35;
-      color: white;
-      padding: 25px 16px;
-      text-align: center;
-    }
-    header h1 { margin: 0 0 10px; font-size: 24px; }
-    header p { margin: 8px 0; }
-    main { max-width: 650px; margin: auto; padding: 18px; }
-    .card {
-      background: white;
-      padding: 20px;
-      margin-bottom: 16px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px #00000012;
-    }
-    h2 { color: #075c35; margin-top: 0; }
-    label { display: block; margin-top: 14px; font-weight: bold; }
-    input {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      margin-top: 6px;
-      border: 1px solid #bbb;
-      border-radius: 7px;
-      font-size: 16px;
-    }
-    button {
-      width: 100%;
-      padding: 13px;
-      margin-top: 14px;
-      border: 0;
-      border-radius: 7px;
-      background: #075c35;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-    }
-    button.secondary { background: #e6eee9; color: #075c35; }
-    button:disabled { opacity: .6; }
-    #message { white-space: pre-wrap; overflow-wrap: anywhere; }
-    footer { text-align: center; padding: 20px; color: #666; }
-  </style>
-</head>
-<body>
-<header>
-  <h1>Ebonyi United Special Club</h1>
-  <p>Enugu State Branch</p>
-  <p><strong>Raise Yourself to Help Mankind</strong></p>
-</header>
+  <label for="registerPassword">Password (at least 8 characters)</label>  
+  <input id="registerPassword" type="password"  
+    autocomplete="new-password" minlength="8" required>  
 
-<main>
-  <section class="card">
-    <h2>Welcome</h2>
-    <p>Founder: Nwaja Hygienus, popularly known as MC Okwute Ndi Igbo.</p>
-    <p>Register for membership or sign in to your account.</p>
-  </section>
+  <button id="registerButton" type="submit">Register</button>  
+</form>
 
-  <section class="card">
-    <h2>Member Registration</h2>
-    <form id="registerForm">
-      <label for="fullName">Full name</label>
-      <input id="fullName" autocomplete="name" required maxlength="100">
+  </section>    <section class="card">  
+    <h2>Member Login</h2>  
+    <form id="loginForm">  
+      <label for="loginEmail">Email address</label>  
+      <input id="loginEmail" type="email" autocomplete="email" required>  <label for="loginPassword">Password</label>  
+  <input id="loginPassword" type="password"  
+    autocomplete="current-password" required>  
 
-      <label for="registerEmail">Email address</label>
-      <input id="registerEmail" type="email" autocomplete="email" required>
+  <button type="submit">Sign In</button>  
+  <button class="secondary" id="signOutButton" type="button" hidden>  
+    Sign Out  
+  </button>  
+</form>
 
-      <label for="registerPassword">Password (at least 8 characters)</label>
-      <input id="registerPassword" type="password"
-        autocomplete="new-password" minlength="8" required>
-
-      <button id="registerButton" type="submit">Register</button>
-    </form>
-  </section>
-
-  <section class="card">
-    <h2>Member Login</h2>
-    <form id="loginForm">
-      <label for="loginEmail">Email address</label>
-      <input id="loginEmail" type="email" autocomplete="email" required>
-
-      <label for="loginPassword">Password</label>
-      <input id="loginPassword" type="password"
-        autocomplete="current-password" required>
-
-      <button type="submit">Sign In</button>
-      <button class="secondary" id="signOutButton" type="button" hidden>
-        Sign Out
-      </button>
-    </form>
-  </section>
-
-  <section class="card">
-    <h2>Account Status</h2>
-    <p id="message" role="status" aria-live="polite">
-      Register or sign in to continue.
-    </p>
-  </section>
-</main>
-
-<footer>© Ebonyi United Special Club — Enugu State Branch</footer>
-
-<script type="module">
-  import { createClient } from
-    'https://esm.sh/@supabase/supabase-js@2';
-
-  const SUPABASE_URL =
-    'https://wvbotoxnnsnebhonvfwe.supabase.co';
-
-  const SUPABASE_PUBLISHABLE_KEY =
-    'sb_publishable_3tI5tZh-f2LT5-wiMsjSGg_I-xL2r74';
-
-  const message = document.getElementById('message');
-  const registerButton = document.getElementById('registerButton');
-  const signOutButton = document.getElementById('signOutButton');
-
-  function showMessage(text) {
-    message.textContent = text;
-  }
-
-  const supabase = createClient(
-    SUPABASE_URL,
-    SUPABASE_PUBLISHABLE_KEY
-  );
-
-  document.getElementById('registerForm').addEventListener(
-    'submit', async event => {
-      event.preventDefault();
-      registerButton.disabled = true;
-      showMessage('Creating your account…');
-
-      try {
-        const fullName =
-          document.getElementById('fullName').value.trim();
-        const email =
-          document.getElementById('registerEmail').value.trim();
-        const password =
-          document.getElementById('registerPassword').value;
-
-        const { data, error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: { data: { full_name: fullName } }
-        });
-
-        if (error) throw error;
-
-        if (data.session) {
-          showMessage(
-            'Registration received. Your membership must be approved ' +
-            'by the club founder before you can access member services.'
-          );
-        } else {
-          showMessage(
-            'Registration submitted. Check your email for verification ' +
-            'if requested. Your membership must be approved by the ' +
-            'club founder before accessing member services.'
-          );
-        }
-      } catch (error) {
-        showMessage('Registration failed: ' + error.message);
-      } finally {
-        registerButton.disabled = false;
-      }
-    }
-  );
-
-  document.getElementById('loginForm').addEventListener(
-    'submit', async event => {
-      event.preventDefault();
-      showMessage('Signing in…');
-
-      try {
-        const email =
-          document.getElementById('loginEmail').value.trim();
-        const password =
-          document.getElementById('loginPassword').value;
-
-        const { error } = await supabase.auth.signInWithPassword({
-          email, password
-        });
-
-        if (error) throw error;
-
-        signOutButton.hidden = false;
-        showMessage(
-          'You are signed in. Member services remain restricted until ' +
-          'your membership approval and access permissions are confirmed.'
-        );
-      } catch (error) {
-        showMessage('Login failed: ' + error.message);
-      }
-    }
-  );
-
-  signOutButton.addEventListener('click', async () => {
-    const { error } = await supabase.auth.signOut();
-
-    if (error) {
-      showMessage('Sign out failed: ' + error.message);
-      return;
-    }
-
-    signOutButton.hidden = true;
-    showMessage('You have signed out.');
-  });
-
-  const { data } = await supabase.auth.getSession();
-
-  if (data.session) {
-    signOutButton.hidden = false;
-    showMessage(
-      'You are signed in. Member access must still be checked.'
-    );
-  }
-</script>
-</body>
-</html>
+  </section>    <section class="card">  
+    <h2>Account Status</h2>  
+    <p id="message" role="status" aria-live="polite">  
+      Register or sign in to continue.  
+    </p>  
+  </section>  
+</main>  <footer>© Ebonyi United Special Club — Enugu State Branch</footer>  <script type="module">  
+  import { createClient } from  
+    'https://esm.sh/@supabase/supabase-js@2';  
+  
+  const SUPABASE_URL =  
+    'https://wvbotoxnnsnebhonvfwe.supabase.co';  
+  
+  const SUPABASE_PUBLISHABLE_KEY =  
+    'sb_publishable_3tI5tZh-f2LT5-wiMsjSGg_I-xL2r74';  
+  
+  const message = document.getElementById('message');  
+  const registerButton = document.getElementById('registerButton');  
+  const signOutButton = document.getElementById('signOutButton');  
+  
+  function showMessage(text) {  
+    message.textContent = text;  
+  }  
+  
+  const supabase = createClient(  
+    SUPABASE_URL,  
+    SUPABASE_PUBLISHABLE_KEY  
+  );  
+  
+  document.getElementById('registerForm').addEventListener(  
+    'submit', async event => {  
+      event.preventDefault();  
+      registerButton.disabled = true;  
+      showMessage('Creating your account…');  
+  
+      try {  
+        const fullName =  
+          document.getElementById('fullName').value.trim();  
+        const email =  
+          document.getElementById('registerEmail').value.trim();  
+        const password =  
+          document.getElementById('registerPassword').value;  
+  
+        const { data, error } = await supabase.auth.signUp({  
+          email,  
+          password,  
+          options: { data: { full_name: fullName } }  
+        });  
+  
+        if (error) throw error;  
+  
+        if (data.session) {  
+          showMessage(  
+            'Registration received. Your membership must be approved ' +  
+            'by the club founder before you can access member services.'  
+          );  
+        } else {  
+          showMessage(  
+            'Registration submitted. Check your email for verification ' +  
+            'if requested. Your membership must be approved by the ' +  
+            'club founder before accessing member services.'  
+          );  
+        }  
+      } catch (error) {  
+        showMessage('Registration failed: ' + error.message);  
+      } finally {  
+        registerButton.disabled = false;  
+      }  
+    }  
+  );  
+  
+  document.getElementById('loginForm').addEventListener(  
+    'submit', async event => {  
+      event.preventDefault();  
+      showMessage('Signing in…');  
+  
+      try {  
+        const email =  
+          document.getElementById('loginEmail').value.trim();  
+        const password =  
+          document.getElementById('loginPassword').value;  
+  
+        const { error } = await supabase.auth.signInWithPassword({  
+          email, password  
+        });  
+  
+        if (error) throw error;  
+  
+        signOutButton.hidden = false;  
+        showMessage(  
+          'You are signed in. Member services remain restricted until ' +  
+          'your membership approval and access permissions are confirmed.'  
+        );  
+      } catch (error) {  
+        showMessage('Login failed: ' + error.message);  
+      }  
+    }  
+  );  
+  
+  signOutButton.addEventListener('click', async () => {  
+    const { error } = await supabase.auth.signOut();  
+  
+    if (error) {  
+      showMessage('Sign out failed: ' + error.message);  
+      return;  
+    }  
+  
+    signOutButton.hidden = true;  
+    showMessage('You have signed out.');  
+  });  
+  
+  const { data } = await supabase.auth.getSession();  
+  
+  if (data.session) {  
+    signOutButton.hidden = false;  
+    showMessage(  
+      'You are signed in. Member access must still be checked.'  
+    );  
+  }  
+</script>  </body>  
+</html>  Check it
